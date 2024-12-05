@@ -1,0 +1,22 @@
+{% extends 'allapp/layoute.html' %}
+
+{% block title %}
+Новостная страница
+{% endblock %}
+
+{% block content %}
+<h1>Новостная страница</h1>
+{% for new in news %}
+<div>
+    <h3>{{ new.title }}</h3>
+
+    <p class="bg-secondary text-white p-2">{{ new.short_description }}</p>  <!-- серый фон с белым текстом -->
+
+    <p class="bg-warning p-2">{{ new.user }} | Дата: {{ new.pub_date }}</p>  <!-- желтый фон -->
+
+    <p>{{ new.text }}</p>
+
+
+</div>
+{% endfor %}
+{% endblock %}
