@@ -1,0 +1,32 @@
+{% extends 'allapp/layoute.html' %}
+
+{% block title %}
+Новостная страница
+{% endblock %}
+
+{% block content %}
+<h1>Новостная страница</h1>
+
+<!-- Создаём контейнер для сетки -->
+<div class="container">
+    <div class="row">
+        {% if news %}
+            {% for new in news %}
+                <div class="col-md-6 mb-4">  <!-- Каждый блок будет занимать 6 колонок из 12, т.е. две колонки в ряду -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ new.title }}</h5>
+                            <p class="card-text">{{ new.short_description }}</p>
+                            <!-- Кнопка для перехода на страницу с полной новостью -->
+                            <a href="{% url 'newnews:view_news' new.id %}" class="btn btn-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h4>Новостей ещё нет.</h4>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

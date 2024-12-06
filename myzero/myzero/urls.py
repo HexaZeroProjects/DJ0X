@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('allapp.urls')),
     path('appdz1', include('appdz1.urls')),
     path('appdz2', include('appdz2.urls')),
-    path('news/', include('news.urls'))
+    path('news/', include('news.urls')),
+     path('newnews/', include('newnews.urls')),
 ]

@@ -41,9 +41,7 @@ INSTALLED_APPS = [
     'appdz2',
     'allapp',
     'news',
-
-
-
+    'newnews'
 ]
 
 MIDDLEWARE = [

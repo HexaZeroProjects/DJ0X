@@ -6,26 +6,32 @@
     <title>{% block title %}My Django Project{% endblock %}</title>
     <!-- Подключение Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <!-- ВАЖНО: 'd-flex flex-column' для Flexbox и 'min-vh-100' для растягивания страницы -->
 <body class="d-flex flex-column min-vh-100">
-    <!-- Навигация -->
-    {% include 'allapp/nav.html' %}
+<!-- Навигация -->
+{% include 'allapp/nav.html' %}
 
-    <!-- Основной контент, который заполняет свободное пространство -->
-    <main class="flex-shrink-0">
-        <div class="container mt-4">
-            {% block content %}
-            <h1>Welcome to My Django App!</h1>
-            <p>This is the default content. Replace it in child templates.</p>
-            {% endblock %}
-        </div>
-    </main>
+<!-- Основной контент, который заполняет свободное пространство -->
+<main class="flex-shrink-0">
+    <div class="container mt-4">
+        {% block content %}
+        <h1>Welcome to My Django App!</h1>
+        <p>This is the default content. Replace it in child templates.</p>
+        {% endblock %}
+    </div>
+</main>
 
-    <!-- Футер -->
-    {% include 'allapp/footer.html' %}
+<!-- Футер -->
+{% include 'allapp/footer.html' %}
 
-    <!-- Подключение Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Подключение Bootstrap JS -->
+<!-- Bootstrap JS (не забудьте подключить Popper.js для работы с выпадающими меню) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

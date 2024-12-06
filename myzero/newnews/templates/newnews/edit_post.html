@@ -1,0 +1,27 @@
+{% extends 'allapp/layoute.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Редактировать новость</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_title" class="form-label">Заголовок</label>
+            {{ form.title }}  <!-- Заголовок -->
+        </div>
+        <div class="mb-3">
+            <label for="id_short_description" class="form-label">Краткое описание</label>
+            {{ form.short_description }}  <!-- Краткое описание -->
+        </div>
+        <div class="mb-3">
+            <label for="id_text" class="form-label">Содержание</label>
+            {{ form.text }}  <!-- Содержание -->
+        </div>
+        <!-- Скрытые поля для pub_date и user -->
+        {{ form.pub_date }}  <!-- Дата (будет скрыта) -->
+        {{ form.user }}  <!-- Пользователь (будет скрыт) -->
+
+        <button type="submit" class="btn btn-warning">Сохранить изменения</button>
+    </form>
+</div>
+{% endblock %}

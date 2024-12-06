@@ -7,13 +7,23 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link " href="/appdz1">Задание 1</a>
+                    <a class="nav-link" href="/appdz1">Задание 1</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/appdz2">Задание 2</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/news">Новостная страница</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Новые новости (ДЗ4)
+                    </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'newnews:news_home' %}">Главная</a></li> <!-- Главная страница -->
+                    <li><a class="dropdown-item" href="{% url 'newnews:add_news' %}">Добавить новость</a></li> <!-- Страница создания новости -->
+                </ul>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Контакты</a>

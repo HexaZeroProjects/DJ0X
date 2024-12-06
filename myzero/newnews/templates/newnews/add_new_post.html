@@ -1,0 +1,45 @@
+{% extends 'allapp/layoute.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Добавить новость</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Проверка на ошибки -->
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>Пожалуйста, исправьте ошибки ниже:</strong>
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <!-- Заголовок -->
+        <div class="mb-3">
+            <label for="id_title" class="form-label">Заголовок</label>
+            {{ form.title }}
+        </div>
+
+        <!-- Краткое описание -->
+        <div class="mb-3">
+            <label for="id_short_description" class="form-label">Краткое описание</label>
+            {{ form.short_description }}
+        </div>
+
+        <!-- Содержание -->
+        <div class="mb-3">
+            <label for="id_text" class="form-label">Содержание</label>
+            {{ form.text }}
+        </div>
+
+        <!-- Кнопка отправки -->
+        <button type="submit" class="btn btn-primary">Добавить новость</button>
+    </form>
+</div>
+{% endblock %}
